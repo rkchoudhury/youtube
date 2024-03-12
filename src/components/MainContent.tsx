@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { GET_POPULAR_VIDEO_URL } from "../utils/apiConstants";
 import VideoCard from "./VideoCard";
 import { IVideo } from "../models/VideoModel";
+import { ROUTE_NAMES } from "../navigation/Routes";
 
 const MainContent = () => {
   const [videos, setVideos] = useState([]);
@@ -23,7 +25,9 @@ const MainContent = () => {
     <div className="flex-1 ml-6">
       <div className="flex flex-wrap">
         {videos.map((eachVideo: IVideo) => (
-          <VideoCard key={eachVideo.id} video={eachVideo} />
+          <Link to={`${ROUTE_NAMES.WATCH}?v=${eachVideo.id}`}>
+            <VideoCard key={eachVideo.id} video={eachVideo} />
+          </Link>
         ))}
       </div>
     </div>

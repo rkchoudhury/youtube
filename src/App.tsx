@@ -1,15 +1,11 @@
-import Header from "./components/Header";
-import MainContent from "./components/MainContent";
-import SideBar from "./components/SideBar";
+import { RouterProvider } from "react-router-dom";
+
+import appRouter from "./navigation/AppNavigator";
 
 function App() {
   return (
     <div className="">
-      <Header />
-      <div className="flex">
-        <SideBar />
-        <MainContent />
-      </div>
+      <RouterProvider router={appRouter} />
     </div>
   );
 }
