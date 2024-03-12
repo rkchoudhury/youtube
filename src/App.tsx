@@ -1,5 +1,13 @@
+import { RouterProvider } from "react-router-dom";
+
+import appRouter from "./navigation/AppNavigator";
+
 function App() {
-  return <div className="text-3xl font-bold text-red-400">youtube</div>;
+  return (
+    <div className="">
+      <RouterProvider router={appRouter} />
+    </div>
+  );
 }
 
 export default App;
